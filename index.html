@@ -21,6 +21,15 @@ tailwind.config = {
   }
 }
 </script>
+  <script>
+  // 簡単なパスワード保護（MTG共有用）
+  const password = prompt("パスワードを入力してください");
+  if (password !== "scl2026") { // ← 好きなパスワードに変更してください
+    alert("パスワードが違います。");
+    document.body.innerHTML = "<h1>認証に失敗しました。</h1>";
+    window.stop();
+  }
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:wght@700&display=swap');
   body { font-family: 'Noto Sans JP', sans-serif; background: #f8f9fc; }
